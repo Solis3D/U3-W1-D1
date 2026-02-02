@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect, useRef } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -7,9 +8,25 @@ import MyImg from "./components/MyImg";
 
 function App() {
   const [count, setCount] = useState(0);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const start = () => {
+      audioRef.current.volume = 0.15;
+      audioRef.current.play();
+      document.removeEventListener("click", start);
+    };
+
+    document.addEventListener("click", start);
+    return () => document.removeEventListener("click", start);
+  });
 
   return (
     <>
+      <audio ref={audioRef} loop>
+        <source src="/bg.mp3" type="audio/mpeg" />
+      </audio>
+
       <MyH4 text="Viva Ugo" customClass="animatedText" />
       <MyH4 text="Mannaggia Ugo" customClass="animatedText" />
 

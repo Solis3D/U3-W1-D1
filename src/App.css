@@ -1,0 +1,117 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.incredible {
+  width: 400px;
+
+  margin-top: 5em;
+
+  animation:
+    glowPulse 2.5s ease-in-out infinite,
+    heartBeat 2s ease 0s infinite normal forwards;
+  box-shadow: 0px 0px 66px 10px rgba(45, 255, 196, 0.9);
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0px 0px 10px 0px rgba(45, 255, 196, 0);
+  }
+
+  50% {
+    box-shadow: 0px 0px 66px 10px rgba(45, 255, 196, 0.9);
+  }
+
+  100% {
+    box-shadow: 0px 0px 10px 0px rgba(45, 255, 196, 0);
+  }
+}
+
+.animatedText {
+  color: red;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 1rem;
+  opacity: 50%;
+
+  animation: changeColor 2s ease-out infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    color: red;
+  }
+
+  50% {
+    color: green;
+  }
+
+  100% {
+    color: blue;
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
